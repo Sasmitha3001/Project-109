@@ -35,9 +35,9 @@ figure.add_trace(go.Scatter(x=[third_std_dev_start,third_std_dev_start],y=[0,0.0
 figure.add_trace(go.Scatter(x=[mean,mean],y=[0,0.05],name="Mean"))
 figure.show()
 
-list_stdev_first=(i for i in math_score if first_std_dev_start>i and first_std_dev_end<i)
-list_stdev_second=(i for i in math_score if second_std_dev_start>i and second_std_dev_end<i)
-list_stdev_third=(i for i in math_score if third_std_dev_start>i and third_std_dev_end<i)
+list_stdev_first=[i for i in math_score if i>first_std_dev_start>i and i<first_std_dev_end<i]
+list_stdev_second=[i for i in math_score if i>second_std_dev_start>i and i<second_std_dev_end<i]
+list_stdev_third=[i for i in math_score if i>third_std_dev_start and i<third_std_dev_end]
 
 perct_stdev1=len(list_stdev_first)*100.0/len(math_score)
 perct_stdev2=len(list_stdev_second)*100.0/len(math_score)
